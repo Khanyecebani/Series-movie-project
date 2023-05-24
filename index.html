@@ -14,16 +14,17 @@ header{
     
 }
 
-footer{
+.footer{
     background-color: black;
     text-align: center;
     color: beige;
     font-family: 'Times New Roman', Times, serif;
     font-size: 35px;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
     left: 0;
+    
 }
 
 .tab{
@@ -50,6 +51,66 @@ footer{
   clear: both;
 }
 
+#ratings {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#ratings th,#ratings td {
+    padding: 10px;
+    border: 1px solid rebeccapurple;
+    
+}
+
+#ratings tr:nth-child(even) {background-color: aquamarine;}
+#ratings tr:hover {background-color: bisque;}
+#ratings th {text-align: left;}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.col-20{
+    float: left;
+    width: 20%;
+    padding: 5px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: cyan;
+    float: right;
+    padding: 10px;
+    color: aliceblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 
 </style>
 <body>
@@ -59,12 +120,13 @@ footer{
         <button class="tab">Action</button>
         <button class="tab">Drama</button>
         <button class="tab">Crime</button>
-        <button class="tab">Dance</button>
+        <button class="tab">Horror</button>
         <button class="tab">Historical</button>
         <button class="tab">Anime</button>
 
     </div>
-
+    <br>
+    
     <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; text-align: center;"><b>Best or Top rated</b></h2>
     <div class="row">
         <div class="column">
@@ -97,24 +159,150 @@ footer{
 
         <div class="column">
         <ul>
-            <li><a href="https://en.wikipedia.org/wiki/Money_Heist">Money Heist</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)">Peaky Blinders</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Band_of_Brothers_(miniseries)">Band Of Brothers</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender">Avatar:The Last Airbender</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Sherlock_(TV_series)">Sherlock</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Snowfall_(TV_series)">Snowfall</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/The_Blacklist">The Blacklist</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Person_of_Interest_(TV_series)">Person of Interest</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Godfather_of_Harlem">Godfather of Harlem</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)">The Walking Dead</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/The_Last_Kingdom_(TV_series)">The Last Kingdom</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Ozark_(TV_series)">Ozark</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Better_Call_Saul">Better Call Saul</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Queen_of_the_South_(TV_series)">Queen of The South</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Stranger_Things">Stranger Things</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Sons_of_Anarchy">Sons of Anarchy</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/House_of_Cards_(American_TV_series)">House of Cards</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/The_Big_Bang_Theory">The Big Bang Theory</a></li>
         </ul>
 
         </div>
+
     
     </div>
+    <p>One could argue that these are the greatests of all time.Below are the ratings of the top 5 as per IMDB(sorted by Number of votes descending):</p>
+    <table id="ratings">
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Rating</th>
+        </tr>
+        <tr>
+            <td>Game of Thrones</td>
+            <td>Action,Adventure,Drama</td>
+            <td>9.2</td>
+        </tr>
+        <tr>
+            <td>Breaking Bad</td>
+            <td>Crime,Drama,Thriller</td>
+            <td>9.5</td>
+            
+        </tr>
+        <tr>
+            <td>Stranger Things</td>
+            <td>Drama,Fantasy,Horror</td>
+            <td>8.7</td>
+        </tr>
+        <tr>
+            <td>The The Walking Dead</td>
+            <td>Drama,Horror,Thriller</td>
+            <td>8.1</td>
+        </tr>
+        <tr>
+            <td>Friends</td>
+            <td>Comedy,Romance</td>
+            <td>8.9</td>
+        </tr>
+
+
+    </table>
+    <br>
+    <div class="row">
+        <div class="col-20">
+            <img src="GOT.jpg" alt="Game of Thrones" height="150" width="150">
+            <p style="font-family: sans-serif; color: crimson;"><b>Game_Of_Thrones</b></p>
+        </div>
+        <div class="col-20">
+            <img src="BB.jpg" alt="Breaking Bad" height="150" width="150">
+            <p style="font-family: sans-serif; color: crimson;"><b>Breaking_Bad</b></p>
+        </div>
+        <div class="col-20">
+            <img src="ST.jpg" alt="Stranger Things" height="150" width="150">
+            <p style="font-family: sans-serif; color: crimson;"><b>Stranger_Things</b></p>
+
+        </div>
+        <div class="col-20">
+            <img src="TWD.jpg" alt="The_Walking_Dead_" height="150" width="150">
+            <p style="font-family: sans-serif; color: crimson;"><b>The_Walking_Dead_</b></p>
+        </div>
+        <div class="col-20">
+            <img src="Friends.jpg" alt="Friends" height="150" width="150">
+            <p style="font-family: sans-serif; color: crimson;"><b>Friends</b></p>
+        </div>
+
+    </div>
+
+
+    <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">From the table of ratings above,please vote for your favorite below and comment.</p>
     
+    <div style="background-color:darkslategray; border-radius: 5px; padding: 12px;">
+        <form action="/action_page.php">
+        <div class="row">
+            <div class="col-25">
+                <label for="fnmae">First Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="Your name...">
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="lastname" placeholder="Your last name...">
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="best">Select series</label>
+            </div>
+            <div class="col-75">
+                <select id="best" name="best">
+                    <option value="got">Game Of Thrones</option>
+                    <option value="bb">Breaking Bad</option>
+                    <option value="Stranger Things">Stranger Things</option>
+                    <option value="TWD">The Walking Dead</option>
+                    <option value="Friends">Friends</option>
+                </select>
+
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="comment">Comment</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="comment" name="comment" style="height: 200px;">
+
+                    </textarea>
+
+                </div>
+
+            </div>
+            
+            <div class="row">
+                <input type="submit" value="submit">
+
+            </div>
+
+        </div>
+    </form>
+
+    </div>
+
     
 
-    <footer>K.C</footer>
+    <div class="footer">K.C</div>
 </body>
 
 
