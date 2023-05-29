@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<meta name= "viewport" content= "width=device-width, initial-scale=1">
+<style>
+
+.cursor {
+  cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+}
+h1 {
+    text-shadow: 0 0 3px #FF0000;
+    text-align: center;
+}
+
+/*position the image container*/
+.container {
+    position: relative;
+}
+
+.mySlides{
+    display: none;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top : 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 0 3px 3px 0;
+    user-select: none; 
+    -webkit-user-select: none;
+    color: black;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color:brown;
+  font-size: 32px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/*fit screen to prevent blurring  */
+.fitsc  {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+}
+
+</style>
+<body>
+    <h1>ACTION SERIES</h1>
+    
+    <div class="container">
+        <div class="mySlides">
+            <div class="numbertext">1/6</div>
+            <img class="fitsc" src="https://bestsimilar.com/img/movie/thumb/c0/5109.jpg">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2/6</div>
+            <img class="fitsc" src="https://flxt.tmsimg.com/assets/p14020271_b_v9_ac.jpg">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3/6</div>
+            <img class="fitsc" src="https://m.media-amazon.com/images/M/MV5BOGJlZTE0MTQtZDdmMS00YWViLThlMDktYzk1N2RhMjY0NGEyXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_.jpg">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">4/6</div>
+            <img class="fitsc" src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQSMcH7d0gQjQ7W5mJmJNGAw6fzlWzoHeohNtmmbcFx6GA2gaWkX6qmIx7mJSOqk7y0t9sNfdzePXYTKqhDnZjjzPj1fhK9PD3og9JAH4NWAyQ_JUmPFzc0yUcV6he_IYdKJzz97ULbOVVGACnP6SmlxDv34.jpg?r=ca3">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">5/6</div>
+            <img class="fitsc" src="https://m.media-amazon.com/images/M/MV5BZGIwMTU4YmMtY2ViZi00MjAzLTlmYTQtZTIyOWI0ZDA3YmE4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">6/6</div>
+            <img class="fitsc" src="https://pics.filmaffinity.com/Top_Boy_TV_Series-582175364-large.jpg">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        <div class="caption-container">
+            <p id="caption"></p>
+
+        </div>
+        
+        <div class="row">
+            <div class="column">
+                <img class="demo cursor" src="https://bestsimilar.com/img/movie/thumb/c0/5109.jpg" style="width:100%" onclick="currentSlide(1)" alt="Banshee">
+            </div>
+
+            <div class="column">
+                <img class="demo cursor" src="https://flxt.tmsimg.com/assets/p14020271_b_v9_ac.jpg" style="width:100%" onclick="currentSlide(2)" alt="El Chapo">
+            </div>
+
+            <div class="column">
+                <img class="demo cursor" src="https://m.media-amazon.com/images/M/MV5BOGJlZTE0MTQtZDdmMS00YWViLThlMDktYzk1N2RhMjY0NGEyXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_.jpg" style="width:100%" onclick="currentSlide(3)" alt="Gangs of London">
+            </div>
+            
+            <div class="column">
+                <img class="demo cursor" src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQSMcH7d0gQjQ7W5mJmJNGAw6fzlWzoHeohNtmmbcFx6GA2gaWkX6qmIx7mJSOqk7y0t9sNfdzePXYTKqhDnZjjzPj1fhK9PD3og9JAH4NWAyQ_JUmPFzc0yUcV6he_IYdKJzz97ULbOVVGACnP6SmlxDv34.jpg?r=ca3" style="width:100%" onclick="currentSlide(4)" alt="Vikings:Vallahla">
+            </div>
+            
+            <div>
+                <img class="demo cursor" src="https://m.media-amazon.com/images/M/MV5BZGIwMTU4YmMtY2ViZi00MjAzLTlmYTQtZTIyOWI0ZDA3YmE4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg" style="width:16.66%" onclick="currentSlide(5)" alt="Power:Book II">
+            </div>
+
+            <div>
+                <img class="demo cursor" src="https://pics.filmaffinity.com/Top_Boy_TV_Series-582175364-large.jpg" style="width:16.66%" onclick="currentSlide(6)" alt="Top Boy">
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+
+
+
+
+    </script>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
